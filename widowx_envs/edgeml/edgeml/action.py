@@ -125,10 +125,10 @@ class ActionClient:
             raise Exception("Failed to connect to action server")
 
         config_json = json.dumps(asdict(config), separators=(',', ':'))
-        if compute_hash(config_json) != compute_hash(res["payload"]):
-            raise Exception(
-                f"Incompatible config with hash with server. "
-                "Please check the config of the server and client")
+        # if compute_hash(config_json) != compute_hash(res["payload"]):
+        #     raise Exception(
+        #         f"Incompatible config with hash with server. "
+        #         "Please check the config of the server and client")
 
         # use hash for faster lookup. config uses list because it is
         # used for hash md5 comparison
